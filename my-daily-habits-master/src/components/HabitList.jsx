@@ -20,7 +20,7 @@ function HabitList() {
     // Se há dados salvos — tenta fazer o parse
     try { 
         return JSON.parse(stored)
-    } catch (error) {
+    } catch {
         //se o JSON estiver corrompido - volta pro array inicial
         return []
     }

@@ -13,6 +13,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 150vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* manter topo estável entre páginas */
+  background-color: #babac7;
+  color: #1f489f;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -24,14 +49,20 @@ a:hover {
 
 body {
   margin: 0;
-  place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 150vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* era flex-start, agora centraliza verticalmente */
+  background-color: #babac7;
+  color: #1f489f;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  text-align: center; /* centraliza texto do título */
 }
 
 button {
@@ -41,9 +72,11 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color:  #1f489f;
   cursor: pointer;
   transition: border-color 0.25s;
+  display: block;
+  margin: 0 auto; /* centraliza botões soltos */
 }
 button:hover {
   border-color: #646cff;
@@ -66,47 +99,47 @@ button:focus-visible {
   }
 }
 
-body {
-  font-family: system-ui, -apple-system, sans-serif;
-  margin: 0;
-  background-color: #f4f4f5;
-  align-items: center;
-
-}
-
 header, footer {
   padding: 16px;
-  background-color: #111827;
+  background-color: #163e94;
   color: #f9fafb;
   text-align: center;
+  width: 100%; /* garante que ocupe toda a largura */
+  box-sizing: border-box;
 }
 
 main, section {
   padding: 16px;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 900px;
+  width: 100%;
+  margin: 16px auto; /* auto nas laterais já centraliza horizontalmente */
+  box-sizing: border-box;
 }
 
 .habit-card {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 12px 16px;
-  box-shadow: 0 1px 3px rgba (15, 23, 42, 0.1);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
   margin-bottom: 12px;
+  display: flex; /* era só align-items sem display:flex */
   align-items: center;
+  justify-content: center; /* centraliza conteúdo interno do card */
 }
 
 .habit-form {
   background-color: #ffffff;
   padding: 16px;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 1px 3px rgba(26, 42, 15, 0.1);
   margin-bottom: 16px;
+  text-align: center; /* centraliza labels e textos do formulário */
 }
 .habit-form label {
   display: block;
   margin-bottom: 8px;
   font-size: 0.9rem;
+  text-align: left; /* labels ficam melhor alinhados à esquerda dentro do form */
 }
 .habit-form input {
   width: 100%;
@@ -115,13 +148,18 @@ main, section {
   border-radius: 4px;
   border: 1px solid #d4d4d8;
   font-size: 0.9rem;
+  box-sizing: border-box; /* evita overflow do input */
+  text-align: center; /* centraliza texto digitado */
 }
 .habit-form button {
   margin-top: 8px;
   padding: 8px 16px;
   border-radius: 4px;
   border: none;
-  background-color: #111827;
+  background-color:  #1f489f;
   color: #f9fafb;
   cursor: pointer;
-} 
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* centraliza o botão do form */
+}
